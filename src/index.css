@@ -17,8 +17,9 @@ body * {
   display: block;
   position: relative;
   width: 100%;
+  /* padding: 20px; */
   padding: 0;
-  margin:0;
+  margin:0 auto;
   outline:none;
   border:0px solid transparent;
   box-sizing: border-box;
@@ -27,27 +28,18 @@ body * {
   text-decoration: none;
   color: inherit;
   transition:all 0.2s 0s linear;
-  --primary-color: #1a81fd ;
-  --secondary-color: #25ebff ;
-  --primary-color-2: #0f6dde ;
-  --font-primary-color: #2b3238 ;
-  --font-secondary-color: #42474c ;
-  --font-secondary-color-opacity: #42474c4d;
-  --border-color: #ededed ;
-  --border-light-color: #0000000d;
-  --bg-primary-color: #117af8 ;
-  --bg-secondary-color: #3490ff ;
-  --bg-card-color: #5928dc;
-  --bg-deep-color: #0360cf;
-  --bg-deep-color-opacity: #110c2099 ;
-  --bg-deep-color-deep-opacity: #000000c4 ;
-  --bg-light-color:#d7dae0 ;
-  --box-shadow-color: #e8e8f226 ;
-  --box-shadow-color-hover: #e8e8f29e ;
-  --box--shadow-color-light:#0000001a;
-  --box--shadow-color-deep:#00000062;
+  
+  --theme-primary: #ca9e92;
+  /* --theme-secondary: #92b7ca; */
+  --theme-secondary: #92b7ca;
+  --theme-deep: #a66155;
+  --theme-light: #d0afaf;
+  /* --font-primary: #4e3532; */
+  --font-primary: #423230;
+  --bg-hover: #00000014;
   
 }
+
 
 ::placehoder {
   color: inherit ;
