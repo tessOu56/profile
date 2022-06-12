@@ -8,17 +8,18 @@ const Wrapper = styled.a`
     width: 100%;
     padding: 0 5px;
     margin: 0;
-    color: var(--theme-light);
+    color: var(--theme-secondary);
     font-size: 16px;
     line-height: 1.2em;
+    text-decoration: underline;
+    overflow: hidden;
     &:hover {
         cursor: pointer;
-        color: var(--theme-deep);
+        color: var(--theme-primary);
         text-decoration: underline;
     }
     ${ QUERY_MD }{
         font-size: 14px;
-        line-height: 1.5em;
         justify-content: flex-start;
     }
     ${ props => props }
@@ -28,6 +29,8 @@ const DateTxt = styled.p`
     width: 100%;
     padding: 0 ;
     margin:0;
+    color: inherit;
+    line-height: inherit;
 `;
 
 export default ({ type="" , child , label="" , target=null , ...styleprops }) => {

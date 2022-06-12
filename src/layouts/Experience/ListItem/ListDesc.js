@@ -1,6 +1,7 @@
 
 import React from "react";
 import styled from 'styled-components';
+import { StyledOutLink } from '../../../components';
 
 const Wrapper = styled.li`
     width:100%;
@@ -26,7 +27,8 @@ const Content = styled.div`
 
 const Title = styled.p`
     width: 100%;
-    color: var(--font-primary);
+    color: var(--theme-primary);
+    font-weight: 700;
     font-size:14px;
 `;
 const Description = styled.p`
@@ -34,11 +36,17 @@ const Description = styled.p`
     color: var(--theme-light);
     font-size:12px;
     line-height: 1.5em;
-
 `;
 
+const StyledLink = styled(StyledOutLink)`
+    display:inline-block;
+    width: fit-content;
+    font-size:12px;
+    line-height: 1.3em;
+    vertical-align:text-bottom;
+`;
 export default ({ data }) => {
-    const { name , desc } = data ;
+    const { name , desc , link="" } = data ;
     return( 
         <Wrapper>
             <DotWrap>
@@ -46,7 +54,11 @@ export default ({ data }) => {
             </DotWrap>
             <Content>
                 <Title> { name } </Title>
-                <Description> { desc } </Description>
+                <Description> { desc }
+                    {
+                        link && <StyledLink type="outlink" label={ link } target={ link } />
+                    }
+                </Description>
             </Content>
         </Wrapper>  
     )

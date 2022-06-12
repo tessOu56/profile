@@ -4,9 +4,8 @@ import styled from 'styled-components';
 import { QUERY_MD } from '../../../constants/Style';
 
 import SideLine from './SideLine';
-import ProjectTitle from './ProjectTitle';
-import ProjectItem from './ProjectItem';
-import { LabelTagList } from '../../../components';
+import ListDesc from './ListDesc';
+import { LabelTagList , ItemTitle } from '../../../components';
 
 const Wrapper = styled.li`
     width:100%;
@@ -18,7 +17,7 @@ const Wrapper = styled.li`
 `;
 const ContentWrap= styled.div`
     width:100%;
-    padding: 0 5px 30px;
+    padding: 0 5px 5px;
     color: var(--font-primary);
     font-size: 18px;
     line-height: 1.8em;
@@ -27,18 +26,19 @@ const ContentWrap= styled.div`
 const ProjectList = styled.ul`
     width:100%;
     color: var(--font-primary);
+    padding: 0 5px ;
 `;
 
 export default ({ data }) => {
     const { projects=[], skills=[] , level , ...title } = data ; 
     return( 
         <Wrapper>
-            <SideLine trans={ level > 1 ? true : false }/>
+            <SideLine simply={ level > 1 ? true : false }/>
             <ContentWrap>
-                <ProjectTitle data={ title } />
+                <ItemTitle data={ title } simply={ level > 2 ? true : false  } />
                 <ProjectList>
                 {
-                    projects.map( ( item , i ) => ( <ProjectItem key={ i } data={ item } /> ))
+                    projects.map( ( item , i ) => ( <ListDesc key={ i } data={ item } /> ))
                 }
                 </ProjectList>
                 <LabelTagList data={ skills } />

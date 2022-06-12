@@ -7,7 +7,7 @@ import { QUERY_MD } from '../../../constants/Style';
 const Wrapper = styled.div`
     width:100%;
     display: grid;
-    grid-template-rows: 35px auto;
+    grid-template-rows: 25px auto;
     ${ QUERY_MD }{
         grid-template-rows: 24px auto;
     }
@@ -17,7 +17,7 @@ const Wrapper = styled.div`
 const BallWrap = styled.div`
     width: 100%;
     height:100%;
-    padding: 15px 15px 0;
+    padding: 15px 20px 0;
     ${ QUERY_MD }{
         padding: 12px 9px 0;
     }
@@ -34,21 +34,24 @@ const LineWrap = styled.div`
     width: 100%;
     height:100%;
     padding: 0 49%;
+    ${ QUERY_MD }{
+        padding: 0 48%;
+    }
 `;
 const Line = styled.div`
     width: 100%;
     height:100%;
-    background-color: ${ props => props.color };
+    background: linear-gradient( 180deg , ${ props => props.color } , ${ props => props.color } , var(--theme-light , transparent) );
 `;
 
-export default ({ trans=false }) => {
+export default ({ simply=false }) => {
     return( 
         <Wrapper>
             <BallWrap>
-                <Ball color={ trans ? "var(--theme-light)": "var(--theme-primary)" }/>
+                <Ball color={ simply ? "var(--theme-secondary)": "var(--theme-primary)" }/>
             </BallWrap>
             <LineWrap>
-                <Line color={ trans ? "var(--theme-light)": "var(--theme-primary)" }/>
+                <Line color={ simply ? "var(--theme-secondary)": "var(--theme-primary)" }/>
             </LineWrap>
         </Wrapper>  
     )

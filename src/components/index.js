@@ -13,3 +13,5 @@ export { default as Footer } from './Footer/Footer.js';
 
 export { default as StyledOutLink } from './StyledOutLink/StyledOutLink.js';
 
+export { default as ItemTitle } from './ItemTitle/ItemTitle.js';
+

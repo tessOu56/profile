@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 const Wrapper = styled.ul`
     width:100%;
+    padding: 5px;
     display: flex;
     flex-flow:row wrap;
 `;

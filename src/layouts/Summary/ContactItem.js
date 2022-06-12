@@ -3,7 +3,7 @@
 import React from "react";
 import styled from 'styled-components';
 import { QUERY_MD } from '../../constants/Style';
-import { StyleIcon } from '../../components';
+import { StyleIcon , StyledOutLink } from '../../components';
 
 const Wrapper = styled.li`
     width:fit-content;
@@ -16,32 +16,40 @@ const Wrapper = styled.li`
     flex-flow: row nowrap;
     align-items: center;
     ${ QUERY_MD } {
-        margin: 0 0 2px;
+        margin: 0 0 5px;
+        font-size: 14px;
     }
 `;
 
 const Txt = styled.p`
     width: fit-content;
-    padding:0;
+    padding: 0 5px;
     color: var(--theme-light);
+    margin-right: 10px;
 `;
 
 const IconWrap = styled.div`
     width: fit-content;
-    min-width: 40px;
+    min-width: ${ props => props.smallize ? '10px' : '30px' };
     padding:0;
-    margin-right: 10px;
 `;
 
-export default ({ data }) => {
-    const { name , value , icon } = data ;
+export default ({ data , iconlize=false , txtialize=false}) => {
+    const { value , icon , type="text" } = data ;
 
     return( 
         <Wrapper>
-            <IconWrap>
-                <StyleIcon keyword={ icon } color="var(--theme-deep)" size="30" />
+            <IconWrap smallize={ txtialize }>
+                <StyleIcon 
+                    keyword={ icon } 
+                    color={ iconlize ? 'var(--theme-light)' : 'var(--theme-deep)'} 
+                    size={ txtialize ? 20 : 25 } />
             </IconWrap>
-            <Txt> { value } </Txt>
+            {
+                type === "link" ?
+                <StyledOutLink type="outlink" label={ value } target={ value } /> 
+                :  <Txt> { value } </Txt>
+            }
         </Wrapper>  
     )
 }

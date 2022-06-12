@@ -2,6 +2,7 @@
 
 import React from "react";
 import styled from 'styled-components';
+import { QUERY_MD } from '../../constants/Style';
 
 const TitleName = styled.h3`
     width:100%;
@@ -10,11 +11,15 @@ const TitleName = styled.h3`
     font-weight: 700;
     color: var(--theme-secondary);
     letter-spacing:3px;
+    ${ QUERY_MD }{
+        padding: 10px 0 ;
+    }
+    ${ props => props }
 `;
 
-export default ({ data="" }) => {
+export default ({ data="" , ...props  }) => {
 
     return( 
-        <TitleName> { data } </TitleName>
+        <TitleName { ...props }> { data } </TitleName>
     )
 }

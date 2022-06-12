@@ -13,18 +13,41 @@ const Wrapper = styled.div`
     margin: 0px auto;
 `;
 
+const ColorWrap = styled.div`
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 10px;
+    position: relative;
+    &:before {
+        content:"";
+        position: absolute;
+        inset:0;
+        border-radius: 10px;
+        border: 3px solid transparent;
+        background: linear-gradient( 90deg , var(--font-light) , transparent ) border-box;
+        mask: linear-gradient( #fff 0 0 ) padding-box,linear-gradient( #fff 0 0 ) ;
+        mask-composite: xor;
+        // -website-mask-composite: xor;
+    }
+`;
+
 const TxtContent = styled.div`
     width: 100%;
     margin-bottom: 10px;
 `;
 
-const TxtBox = styled(TxtContent)`
+const TxtBox = styled.div`
+    width: 100%;
     display: grid;
     grid-template-columns: minmax( auto , 150px ) minmax( auto , 100% );
     ${ QUERY_LG }{
         grid-template-columns: minmax( auto , 100% );
     }
 `;
+
+const SecondarySectionName = styled( SectionName )`
+    padding: 10px 0;
+`
 
 const Description = styled.p`
     padding: 5px ;
@@ -34,6 +57,7 @@ const Description = styled.p`
     line-height: 1.5em;
     ${ QUERY_MD }{
         padding: 0 ;
+        font-size: 14px;
     }
 `;
 
@@ -45,58 +69,62 @@ const ContentList = styled.ul`
 
 export default () => {
     const InfoList = [
-        { id: v4() , name: "phone" , value: "0925-098-696" , icon:"call" } , 
-        { id: v4() , name: "mail" , value: "tess2345678@gmail.com" , icon:"mail" } , 
-        { id: v4() , name: "git" , value: "https://github.com/tessOu56"  , icon:"git" } ,  
-        // { id: v4() , name: "linkedin" , value: "0925-098-696" , icon:"lk" } ,  
+        { id: v4() , value: "0925-098-696" , icon:"call" } , 
+        { id: v4() , value: "tess2345678@gmail.com" , icon:"mail" } , 
+        { id: v4()  , value: "https://github.com/tessOu56"  , icon:"git" , type:"link" } ,  
+        { id: v4()  , value: "New Taipei City , Taiwan "  , icon:"location" } ,  
+        // { id: v4() , value: "0925-098-696" , icon:"lk" } ,  
     ]
 
     const SkillList = [
-        { id: v4() , name: "phone" , icon:"html" } , 
-        { id: v4() , name: "phone" , icon:"css" } , 
-        { id: v4() , name: "phone" , icon:"js" } , 
-        { id: v4() , name: "phone" , icon:"react" } , 
-        { id: v4() , name: "phone" , icon:"nodejs" } , 
+        { id: v4() , icon:"html" } , 
+        { id: v4() , icon:"css" } , 
+        { id: v4() , icon:"js" } , 
+        { id: v4() , icon:"react" } , 
+        { id: v4() , icon:"nodejs" } , 
     ]
 
     const LanGList = [
-        { id: v4() , name: "phone" , value: "中文"  , icon:"" } , 
-        { id: v4() , name: "phone" , value: "英文"  , icon:"" } , 
+        { id: v4() , value: "中文"  , icon:"" } , 
+        { id: v4() , value: "英文"  , icon:"" } , 
     ]
 
     const DescList = [
-        "非資訊本科生，於嘉義大學森林暨自然資源學系畢業後，參與資策會前端網站設計開發班，培訓結束後旋即投入前端工作。" ,
-        "於課程培訓期間學會標籤語言 HTML5 , CSS3，和程式語言 JavaScript , PHP , SQL 之運用，使用資料庫為 MySQL ，接觸前端框架或函式庫有 JQuery , VueJS，曾獨立完成靜態商業推廣網站、以及共同開發電商專案等。" ,
-        "第一份前端工作為建置與維護內部系統，除了全力支援前端開發以外，亦參與部分系統的後端業務流程開發與API撰寫，並長期負責相關資料庫的日常維護。工作期間學會 ReactJS , C# ，並逐漸熟悉 SQLServer。" ,
+        "因對網頁設計有興趣而參加資策會前端網站設計開發班，培訓結束後旋即投入前端工作。" ,
+        "於培訓期間學會標籤語言 HTML5 , CSS3，和程式語言 JavaScript , PHP , SQL Query，資料庫為 MySQL ，接觸前端框架或函式庫有 JQuery , VueJS，曾獨立完成靜態商業推廣網站、以及共同開發電商專案等，並在此學習期間逐漸啟發對程式的熱愛，並且從團隊合作中領略共同開發的樂趣。" ,
+        "第一份前端工作為建置與維護內部系統，除了全力支援前端開發以外，亦參與部分系統的後端業務流程開發與API撰寫，並長期負責相關資料庫的日常維護。工作期間學會 ReactJS , C# , SQLServer，逐漸累積軟體/系統開發、跨部門合作的經驗，另也因接觸到資訊軟體業各種面向的技術，為解決各項專業問題，已習慣於自主學習。" ,
         "預期將來更加深入前端領域的專業技術和優化開發效率，若有機會參與後端開發，期望以 NodeJS 為主。" ,
     ]
+
     return( 
         <Wrapper>
             <TxtContent>
                 <SectionName data="Summary" />
+                <ColorWrap>
                 {
                     DescList.map( ( desc , i ) => <Description key={ i }> { desc } </Description> )
                 }
+                </ColorWrap>
             </TxtContent>
             <TxtContent>
                 <TxtBox>
-                    <SectionName data="Main Skills" />
+                    <SecondarySectionName data="Main Skills" />
                     <ContentList>
                     {
-                        SkillList.map( ({ id , ...item }) =>  <ContactItem key={ id } data={ item } /> ) 
+                        SkillList.map( ({ id , ...item }) =>  <ContactItem key={ id } data={ item } iconlize={true}/> ) 
                     }
                     </ContentList>
                 </TxtBox>
                 <TxtBox>
-                    <SectionName data="Languages" />
+                    <SecondarySectionName data="Languages" />
                     <ContentList>
                     {
-                        LanGList.map( ({ id , ...item }) =>  <ContactItem key={ id } data={ item } /> ) 
+                        LanGList.map( ({ id , ...item }) =>  <ContactItem key={ id } data={ item } txtialize={true}/> ) 
                     }
                     </ContentList>
                 </TxtBox>
                 <TxtBox>
-                    <SectionName data="Contact" />
+                    <SecondarySectionName data="Contact" />
                     <ContentList>
                     {
                         InfoList.map( ({ id , ...item }) =>  <ContactItem key={ id } data={ item } /> ) 

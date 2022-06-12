@@ -28,16 +28,29 @@ body * {
   text-decoration: none;
   color: inherit;
   transition:all 0.2s 0s linear;
+  /* background-color: rgb(209, 209, 209); */
   
-  --theme-primary: #ca9e92;
-  /* --theme-secondary: #92b7ca; */
+  /* --theme-primary: #ca9e92;
   --theme-secondary: #92b7ca;
   --theme-deep: #a66155;
   --theme-light: #d0afaf;
-  /* --font-primary: #4e3532; */
   --font-primary: #423230;
-  --bg-hover: #00000014;
+  --bg-hover: #00000014; */
   
+
+
+  --theme-primary: #7c7c7c;
+  --theme-secondary: #979797;
+  --theme-deep: #484848;
+  --theme-light: #d0afaf;
+  --font-deep: #3f3f3f;
+  --font-light: #f4e9bd;
+  --bg-color: #646464;
+  --bg-hover: #0000005f;
+  --point-color: rgb(254, 226, 112);
+  
+  color: var(--font-deep);
+  line-height: 1.8em;
 }
 
 

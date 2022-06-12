@@ -1,27 +1,10 @@
 
 import { IconContext } from 'react-icons';
-// import {
-//     IoLogoFacebook
-//     , IoLogoInstagram
-//     , IoLogoTwitter
-//     , IoLogoLinkedin
-//     , IoLogoGoogle
-//     , IoIosCall
-//     , IoIosMail
-//     , IoMdPin
-//     , IoIosSearch
-//     , IoMdPerson
-//     , IoMdLaptop
-//     , IoIosDesktop
-//     , IoIosArrowDown
-//     , IoIosArrowBack
-//     , IoIosArrowForward
-//     , IoIosArrowUp
-//     , IoMdClose
-// } from 'react-icons/io';
-import { GoMarkGithub } from 'react-icons/go';
+
+import { IoIosSearch , IoMdClose } from 'react-icons/io';
+import { GoMarkGithub , GoLocation , GoPrimitiveDot } from 'react-icons/go';
 import { HiOutlineMail , HiOutlinePhone } from 'react-icons/hi';
-import { BsLinkedin , BsDot } from 'react-icons/bs';
+import { BsLinkedin } from 'react-icons/bs';
 import { DiHtml5 , DiCss3 , DiJavascript1 , DiReact , DiDotnet , DiNodejs } from 'react-icons/di';
 import { RiEnglishInput } from 'react-icons/ri';
 
@@ -34,14 +17,17 @@ export const ChooseIcon = keyword => {
         case "GIT":{
             return <GoMarkGithub />
         }
+        case "LK":{
+            return <BsLinkedin />
+        }
         case "MAIL":{
             return <HiOutlineMail />
         }
         case "CALL":{
             return <HiOutlinePhone />
         }
-        case "LK":{
-            return <BsLinkedin />
+        case "LOCATION":{
+            return <GoLocation />
         }
         case "HTML":{
             return <DiHtml5 />
@@ -64,8 +50,11 @@ export const ChooseIcon = keyword => {
         case "EN":{
             return <RiEnglishInput />
         }
+        case"SEARCH":{
+            return <IoIosSearch />
+        }
         default:{
-            return <BsDot />
+            return <GoPrimitiveDot />
         }
     } 
 }

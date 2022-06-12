@@ -11,7 +11,6 @@ const Content = styled.div`
     width:100%;
     padding: 0px 8px;
     margin: 0 5px 0 0 ;
-    border: 1px solid var(--theme-primary);
     border-radius: 5px;
     color: white;
     font-size: 12px;

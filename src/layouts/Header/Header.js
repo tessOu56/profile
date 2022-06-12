@@ -1,13 +1,12 @@
 
 import React from "react";
 import styled from 'styled-components';
-import { QUERY_MAX_W , QUERY_MD } from '../../constants/Style';
+import { QUERY_MD , QUERY_LG } from '../../constants/Style';
 
 import Logo from '../../static/headshot.jpg';
 
 const Wrapper = styled.header`
-    width: 100%;
-    max-width: ${ QUERY_MAX_W };
+    width: 100%; 
     margin: 0 auto ;
 `;
 
@@ -50,6 +49,9 @@ const BigName = styled.h1`
     font-size: 32px;
     letter-spacing:5px;
     text-transform: uppercase;
+    ${ QUERY_LG }{
+        padding: 0 20px ;
+    }
     ${ QUERY_MD }{
         padding: 10px 15px 5px;
         font-size: 26px;
@@ -62,8 +64,10 @@ const JobName = styled.h2`
     letter-spacing:2px;
     line-height:1.5em;
     text-transform: uppercase;
+    ${ QUERY_LG }{
+        font-size: 16px;
+    }
     ${ QUERY_MD }{
-        padding: 0 15px ;
         font-size: 14px;
     }
 `;
