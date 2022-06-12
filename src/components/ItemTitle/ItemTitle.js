@@ -63,6 +63,7 @@ const Job = styled.p`
 
 const JobLink = styled(StyledLink)`
     padding: 10px 5px 0;
+    line-height: 1.8em;
     ${ QUERY_LG }{
         padding: 0 5px;
         grid-column: 1 / 4 ;

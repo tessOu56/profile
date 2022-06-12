@@ -77,7 +77,7 @@ export default () => {
     return( 
         <Wrapper>
             <Content>
-                <LogoImg src={ Logo } alt="logo"/>
+                <LogoImg src={ Logo } alt="profile-photo"/>
                 <TxtContent>
                     <BigName> Tess Ou </BigName>
                     <JobName> Programmer , Front-end developer , software  engineer </JobName>
