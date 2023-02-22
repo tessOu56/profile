@@ -34,7 +34,7 @@ const IconWrap = styled.div`
     padding:0;
 `;
 
-export default ({ data , iconlize=false , txtialize=false}) => {
+export default function ContactItem({ data , iconlize=false , txtialize=false}) {
     const { value , icon , type="text" } = data ;
 
     return( 

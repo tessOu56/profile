@@ -67,7 +67,7 @@ const ContentList = styled.ul`
     flex-flow: row wrap;
 `;
 
-export default () => {
+export default function Summary () {
     const InfoList = [
         { id: v4() , value: "0925-098-696" , icon:"call" } , 
         { id: v4() , value: "tess2345678@gmail.com" , icon:"mail" } , 

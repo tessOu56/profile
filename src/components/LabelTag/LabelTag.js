@@ -20,7 +20,7 @@ const Content = styled.li`
     line-height: 1.8em;
 `; 
 
-export default ({ data=[] }) => {
+export default function LabelTag({ data=[] }) {
 
     return( 
         <Wrapper>

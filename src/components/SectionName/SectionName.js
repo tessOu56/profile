@@ -17,7 +17,7 @@ const TitleName = styled.h3`
     ${ props => props }
 `;
 
-export default ({ data="" , ...props  }) => {
+export default function SectionName({ data="" , ...props  }) {
 
     return( 
         <TitleName { ...props }> { data } </TitleName>

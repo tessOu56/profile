@@ -25,7 +25,7 @@ const ImgBox = styled.img`
     
 `;
 
-export default ({ data , list=[] , imglist=[] , link }) => {
+export default function Description ({ data , list=[] , imglist=[] , link }){
     const { update } = data ;
 
     return( 

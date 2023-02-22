@@ -2,7 +2,9 @@
 import React from "react";
 import styled from 'styled-components';
 import { QUERY_LG } from '../../../constants/Style';
-import { StyledOutLink , StyleIcon } from '../../../components';
+import { StyledOutLink 
+    // , StyleIcon 
+} from '../../../components';
 
 import Description from './Description';
 
@@ -44,14 +46,14 @@ const HoverWrap = styled.div`
     }
 `;
 
-const IconWrap = styled.div`
-    width: fit-content;
-    min-width: 40px;
-    padding:0;
-    margin-right: 10px;
-`;
+// const IconWrap = styled.div`
+//     width: fit-content;
+//     min-width: 40px;
+//     padding:0;
+//     margin-right: 10px;
+// `;
 
-export default ({ data }) => {
+export default function ProjectItem({ data }) {
     const { img , link , skills , subimgs , ...item } = data ;
     return( 
         <Wrapper>

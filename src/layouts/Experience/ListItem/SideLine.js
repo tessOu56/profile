@@ -44,7 +44,7 @@ const Line = styled.div`
     background: linear-gradient( 180deg , ${ props => props.color } , ${ props => props.color } , var(--theme-light , transparent) );
 `;
 
-export default ({ simply=false }) => {
+export default function SideLine ({ simply=false }){
     return( 
         <Wrapper>
             <BallWrap>

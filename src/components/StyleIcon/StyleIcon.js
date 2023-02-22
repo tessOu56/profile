@@ -1,11 +1,11 @@
 
 import { IconContext } from 'react-icons';
 
-import { IoIosSearch , IoMdClose } from 'react-icons/io';
+import { IoIosSearch  } from 'react-icons/io';
 import { GoMarkGithub , GoLocation , GoPrimitiveDot } from 'react-icons/go';
 import { HiOutlineMail , HiOutlinePhone } from 'react-icons/hi';
 import { BsLinkedin } from 'react-icons/bs';
-import { DiHtml5 , DiCss3 , DiJavascript1 , DiReact , DiDotnet , DiNodejs } from 'react-icons/di';
+import { DiHtml5 , DiCss3 , DiJavascript1 , DiReact , DiDotnet  } from 'react-icons/di';
 import { RiEnglishInput } from 'react-icons/ri';
 
 import { FaNodeJs } from 'react-icons/fa';
@@ -59,7 +59,7 @@ export const ChooseIcon = keyword => {
     } 
 }
 
-export default ({ keyword="" , color , size=16 }) => {
+export default function StyleIcon({ keyword="" , color , size=16 }){
     
     return (
         <IconContext.Provider value={{ color: color , size : size }}>

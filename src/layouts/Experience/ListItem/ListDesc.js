@@ -45,7 +45,7 @@ const StyledLink = styled(StyledOutLink)`
     line-height: 1.3em;
     vertical-align:text-bottom;
 `;
-export default ({ data }) => {
+export default function ListDesc({ data }) {
     const { name , desc , link="" } = data ;
     return( 
         <Wrapper>

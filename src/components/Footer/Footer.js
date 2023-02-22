@@ -18,7 +18,7 @@ const Content = styled.div`
     text-align: center;
 `; 
 
-export default () => {
+export default function Footer(){
 
     return( 
         <Wrapper>

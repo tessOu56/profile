@@ -27,7 +27,7 @@ const List = styled.ul`
     width: 100%;
 `;
 
-export default () => {
+export default function Projects(){
 
     const ProjectList = [
         {

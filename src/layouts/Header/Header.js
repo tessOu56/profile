@@ -72,7 +72,7 @@ const JobName = styled.h2`
     }
 `;
 
-export default () => {
+export default function Header (){
 
     return( 
         <Wrapper>

@@ -33,7 +33,7 @@ const DateTxt = styled.p`
     line-height: inherit;
 `;
 
-export default ({ type="" , child , label="" , target=null , ...styleprops }) => {
+export default function StyledOutLink({ type="" , child , label="" , target=null , ...styleprops }){
 
     return( 
         <Wrapper 

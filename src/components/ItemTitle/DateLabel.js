@@ -1,7 +1,7 @@
 
 import React from "react";
 import styled from 'styled-components';
-import { QUERY_MD , QUERY_LG } from '../../constants/Style';
+import { QUERY_MD } from '../../constants/Style';
 
 const Wrapper = styled.div`
     width: 100%;
@@ -33,7 +33,7 @@ const DateSeperate = styled(DateTxt)`
     color:inherit;
 `;
 
-export default ({ data , simply=false }) => {
+export default function DataLabel({ data , simply=false }) {
     const { startdate , enddate } = data ;
     return( 
         <Wrapper simply={ simply }>

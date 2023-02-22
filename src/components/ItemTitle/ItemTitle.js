@@ -75,7 +75,7 @@ const JobLink = styled(StyledLink)`
     }
 `;
 
-export default ({ data , simply=false , secondary=false }) => {
+export default function ItemTitle({ data , simply=false , secondary=false }) {
     const { name , job , joblink , company , startdate , enddate , desc } = data ;
     return( 
         <Wrapper>

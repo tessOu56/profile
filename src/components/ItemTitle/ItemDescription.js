@@ -31,7 +31,7 @@ const JobDescrip = styled(Descript)`
     }
 `;
 
-export default ({ data , ...styleprops}) => {
+export default function ItemDescription({ data , ...styleprops}) {
     const { company , desc } = data ;
     return( 
         <Wrapper { ...styleprops } >

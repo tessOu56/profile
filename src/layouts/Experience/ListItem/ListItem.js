@@ -29,7 +29,7 @@ const ProjectList = styled.ul`
     padding: 0 5px ;
 `;
 
-export default ({ data }) => {
+export default function ListItem ({ data }) {
     const { projects=[], skills=[] , level , ...title } = data ; 
     return( 
         <Wrapper>
